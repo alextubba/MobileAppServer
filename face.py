@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 # loads base image for now to test
-image = cv2.imread("image2.jpg")
+image = cv2.imread("image.jpg")
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # Load the trained facial recognition model
@@ -33,9 +33,6 @@ cap = cv2.VideoCapture(0)
 
 amount = 0
 
-r = 0,
-g = 255,
-b = 0,
 
 while True:
 
@@ -73,7 +70,7 @@ while True:
                     
             print("Distance: " + str(min_distance))
             if min_distance < 40:
-                cv2.rectangle(frame, (x, y), (x+w, y+h), (r, g, b), 2)
+                cv2.rectangle(frame, (x, y), (x+w, y+h), (0,255,0), 2)
                 cv2.putText(frame, name, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
             else:
                 cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
